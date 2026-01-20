@@ -2,9 +2,9 @@ use <parts/countersink.scad>
 
 $fa = 1;
 $fs = 0.4;
-eps = 0.01;
+eps = 0.1;
 
-length = 160;
+length = 40;
 width = 20;
 span = 20;
 depth = 5;
@@ -42,6 +42,6 @@ module side() {
 rotate([90, 0, 0]) {
     holder();
     translate([0, -3*depth/4, -span/2+depth/2]) cube([length, depth, span]);
-    translate([-width/2, -depth/4 + eps, depth/2]) side();
-    translate([length+width/2-eps, -depth/4, depth/2]) side();
+    translate([-width/2 + eps, -depth/4, depth/2]) side();
+    translate([length+width/2 - eps, -depth/4, depth/2]) side();
 }
